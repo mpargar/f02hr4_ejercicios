@@ -7,13 +7,13 @@
  * * Si el NIP es correcto debera mostrar un menu con la siguientes opciones
  *    * Retirar dinero
  *      * Esta opcion recibira un valor de entrada
- *    * Finalizarlo mostrara el saldo restante
- * * Si el valor es mayor al saldo, mostraras un error y finalizaras el programa.- Si el valor es mayor al saldo, mostraras un error y finalizaras el programa.
- *  * Consultar saldo
- *   * Mostraras el saldo actual.
- * * Depositar dinero
- *  * Esta opcion recibira un valor de entrada
- *  * Mostraras el saldo despues del deposito
+ *      * Finalizarlo mostrara el saldo restante
+ *      * Si el valor es mayor al saldo, mostraras un error y finalizaras el programa.
+ *    * Consultar saldo
+ *      * Mostraras el saldo actual.
+ *    * Depositar dinero
+ *      * Esta opcion recibira un valor de entrada
+ *      * Mostraras el saldo despues del deposito
  * Condiciones:
  * * El nip del usuario sera 1234
  * * El dinero en la cuenta del usuario sera de 9999 mxn
@@ -21,10 +21,9 @@
 
 using namespace std;
 
-const int NIP = 1234;
-
 int main()
 {
+  const int NIP = 1234;
   float saldoInicial = 9999;
   int nip;
   char opcion;
@@ -56,17 +55,18 @@ int main()
   switch (opcion)
   {
   case 'a':
+  case 'A':
     cout << "Inserte la cantidad a retirar" << endl
          << "> ";
     cin >> entradaOperacion;
+    if (entradaOperacion <= 0)
+    {
+      cout << "Cantidad incorrecta" << endl;
+      break;
+    }
     if (entradaOperacion > saldoInicial)
     {
       cout << "Saldo insuficiente" << endl;
-      break;
-    }
-    else if (entradaOperacion <= 0)
-    {
-      cout << "Cantidad incorrecta" << endl;
       break;
     }
     saldoInicial -= entradaOperacion;
@@ -74,9 +74,11 @@ int main()
          << "Su saldo es: " << saldoInicial << endl;
     break;
   case 'b':
+  case 'B':
     cout << "Su saldo es: " << saldoInicial << endl;
     break;
   case 'c':
+  case 'C':
     cout << "Inserte la cantidad a depositar" << endl
          << "> ";
     cin >> entradaOperacion;
@@ -90,6 +92,7 @@ int main()
          << "Su saldo es: " << saldoInicial << endl;
     break;
   case 'd':
+  case 'D':
     cout << "Gracias por usar el cajero" << endl;
     break;
   default:
