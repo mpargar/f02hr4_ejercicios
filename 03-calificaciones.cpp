@@ -5,7 +5,7 @@ using namespace std;
  * Una escuela da calificaciones dependiendo en los rangos de la calificación.
  * 0 - 25 F | 25 - 45  E | 45 - 50 D | 50 - 60 C | 60 - 80 B | 80 - 100 A.
  * Confeccione un programa que reciba una calificación y
- * muestre la categoríaa la que pertenece (a, b, c, d, e, f)
+ * muestre la categoría a la que pertenece (a, b, c, d, e, f)
  */
 int main()
 {
@@ -41,7 +41,7 @@ int main()
   }
   else
   {
-    cout << "A" << endl;
+    cout << "es: A" << endl;
   }
   return 0;
 }
