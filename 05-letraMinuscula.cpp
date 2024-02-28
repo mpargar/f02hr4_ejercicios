@@ -9,15 +9,17 @@ using namespace std;
 
 int main()
 {
+  const int ASCII_LETTER_DISTANCE = 32;
   char letra;
   int letraAscii;
   bool esMayuscula, esMinuscula;
   cout << "Inserte una letra: ";
   cin >> letra;
+
   letraAscii = letra;
 
-  esMayuscula = letraAscii >= 65 && letraAscii <= 90;
-  esMinuscula = letraAscii >= 97 && letraAscii <= 122;
+  esMayuscula = letraAscii >= (int)'A' && letraAscii <= (int)'Z';
+  esMinuscula = letraAscii >= (int)'a' && letraAscii <= (int)'z';
 
   if (esMayuscula)
   {
@@ -25,7 +27,7 @@ int main()
   }
   else if (esMinuscula)
   {
-    cout << letra << " --> " << (char)(letraAscii - 32) << endl;
+    cout << letra << " --> " << (char)(letraAscii - ASCII_LETTER_DISTANCE) << endl;
   }
   else
   {
