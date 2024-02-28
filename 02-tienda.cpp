@@ -8,9 +8,9 @@ using namespace std;
  */
 int main()
 {
-  const float promocion = 1000;
+  const float PROMOCION = 1000;
   float total, descuento;
-  cout << "Inserte el valor de la total: " << endl
+  cout << "Inserte el valor de la venta total: " << endl
        << "$";
   cin >> total;
 
@@ -20,7 +20,7 @@ int main()
     return 0;
   }
 
-  if (total > promocion)
+  if (total > PROMOCION)
   {
     descuento = total * 0.1;
     total -= descuento;
